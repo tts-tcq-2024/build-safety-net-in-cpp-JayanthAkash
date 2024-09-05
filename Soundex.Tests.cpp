@@ -2,9 +2,7 @@
 #include "Soundex.h"
 #include <tuple>
 
-class SoundexParameterizedTest{
-public ::testing::TestWithParam<std::tuple<std::string, std::string>> {};
-}
+class SoundexParameterizedTest : public ::testing::TestWithParam<std::tuple<std::string, std::string>> {};
 
 TEST_P(SoundexParameterizedTest, GeneratesCorrectSoundexCode) {
     
