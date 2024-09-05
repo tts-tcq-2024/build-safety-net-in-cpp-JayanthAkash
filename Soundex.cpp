@@ -2,6 +2,7 @@
 #include <cctype>
 #include <string>
 #include <unordered_map>
+#include <iostream>
 
 std::unordered_map<char, char> buildSoundexMap() {
     return {
@@ -59,6 +60,13 @@ void padSoundexCode(std::string& soundex) {
 
 std::string generateSoundex(const std::string& name) {
     std::string coreSoundex = generateCoreSoundex(name);
+    if (coreSoundex.length() != 0){
     padSoundexCode(coreSoundex);
+    }
     return coreSoundex;
+}
+
+int main(){
+    std::string name = "";
+    std::cout<<generateSoundex(name);
 }
