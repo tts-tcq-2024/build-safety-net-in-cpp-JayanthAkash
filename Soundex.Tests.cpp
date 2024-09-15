@@ -4,7 +4,7 @@
 
 class SoundexParameterizedTest : public ::testing::TestWithParam<std::tuple<std::string, std::string>> {};
 
-TEST_P(SoundexParameterizedTest, GeneratesCorrectSoundexCode) {
+TEST_P(SoundexParameterizedTest, generatesCorrectSoundexCode) {
     
     std::string name = std::get<0>(GetParam());
     std::string expected = std::get<1>(GetParam());
@@ -26,11 +26,11 @@ INSTANTIATE_TEST_SUITE_P(
     )
 );
 
-TEST(SoundexTest, ReturnsEmptyForEmptyString) {
+TEST(SoundexTest, returnsEmptyForEmptyString) {
     EXPECT_EQ(generateSoundex(""), "");
 }
 
-TEST_P(SoundexParameterizedTest, PadsShortNamesWithZeros) {
+TEST_P(SoundexParameterizedTest, padsShortNamesWithZeros) {
     std::string name = std::get<0>(GetParam());
     std::string expected = std::get<1>(GetParam());
 
@@ -45,7 +45,7 @@ INSTANTIATE_TEST_SUITE_P(
     )
 );
 
-TEST_P(SoundexParameterizedTest, CaseInsensitive) {
+TEST_P(SoundexParameterizedTest, returnsSameSoundexForUpperAndLowerCase) {
     std::string name1 = std::get<0>(GetParam());
     std::string name2 = std::get<1>(GetParam());
 
